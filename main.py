@@ -27,7 +27,11 @@ def info_user(message):
 def callback_message(callback):
     if callback.message:
         if callback.data == '/menu':
-            bot.send_message(callback.message.chat.id, 'Вы вернулись назад к меню')
+            bot.send_message(
+                callback.message.chat.id,
+                'Информация о пользователе /info\n'
+                'Узнать погоду /weather\n'
+            )
 
 
 @bot.message_handler(commands=['weather'])
